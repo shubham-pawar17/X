@@ -1,10 +1,12 @@
+import HomeIcon from "../icons/Home"
+
 function Sidebar() {
   return (
     <div className="p-4 space-y-6">
       <h1 className="text-2xl font-bold">X</h1>
 
       <nav className="space-y-4 text-lg">
-        <p className="hover:text-blue-500 cursor-pointer">Home</p>
+        <div><p className="flexhover:text-blue-500 cursor-pointer"><HomeIcon/>Home</p></div>
         <p className="hover:text-blue-500 cursor-pointer">Explore</p>
         <p className="hover:text-blue-500 cursor-pointer">Notifications</p>
         <p className="hover:text-blue-500 cursor-pointer">Messages</p>

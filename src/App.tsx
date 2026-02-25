@@ -17,12 +17,25 @@ function App() {
 
     setPosts([newPost, ...posts])
   }
+
+  const likePost = (id: string) => {
+  setPosts((prevPosts) => {
+    return prevPosts.map((post) =>
+      post.id === id
+        ? { ...post, likes: post.likes + 1 }
+        : post
+    )
+  })
+}
   return (
     <MainLayout>
       <CreatePost onAddPost={addPost}/>
       <div className="p-4 space-y-4">
         {posts.map((post) =>(
-          <PostCard key={post.id} post={post}/>
+          <PostCard 
+          key={post.id} 
+          post={post}
+          onLike={likePost}/>
         ))}
       </div>
     </MainLayout>
