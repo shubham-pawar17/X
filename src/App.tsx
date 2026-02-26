@@ -13,17 +13,26 @@ function App() {
       content,
       likes:0,
       createdAt: new Date().toISOString(),
+      isliked: false
     }
 
     setPosts([newPost, ...posts])
   }
 
-  const likePost = (id: string) => {
+  const toggleLike = (id: string) => {
   setPosts((prevPosts) => {
-    return prevPosts.map((post) =>
-      post.id === id
-        ? { ...post, likes: post.likes + 1 }
-        : post
+    return prevPosts.map((post) =>{
+      if (post.id === id){
+      return { 
+        ...post,
+        isliked :!post.isliked,
+        likes: post.isliked
+        ? post.likes - 1
+        : post.likes + 1
+      }
+    }
+      return post
+}
     )
   })
 }
@@ -35,7 +44,7 @@ function App() {
           <PostCard 
           key={post.id} 
           post={post}
-          onLike={likePost}/>
+          onLike={toggleLike}/>
         ))}
       </div>
     </MainLayout>

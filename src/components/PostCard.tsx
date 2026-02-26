@@ -33,12 +33,17 @@ export function PostCard({ post, onLike }: Props) {
           <RepostIcon />
           <span className="text-sm">1M</span>
         </div>
-        <div className="flex items-center gap-1 text-gray-500 hover:text-blue-500 cursor-pointer transition-colors duration-200">
-          <button onClick={() => onLike(post.id)}
-            className="hover:text:red-500 transition">
-            <LikesIcon /></button>
+
+          <button 
+          onClick={() => onLike(post.id)}
+          className={`flex items-center gap-1 transition duration-200 ${post.isliked}
+          ? "text-red-500"
+          : "text-gray-500 hover:text-red-500"}`}
+          >
+            <LikesIcon />
             <span className="text-sm">{post.likes}</span>
-        </div>
+          </button>
+
         <div className="flex items-center gap-1 text-gray-500 hover:text-blue-500 cursor-pointer transition-colors duration-200">
           <ViewIcon /><span className="text-sm">1M</span>
         </div>
