@@ -4,4 +4,5 @@ export type post ={
     content :string
     likes :number
     createdAt :string
+    isliked: boolean
 }

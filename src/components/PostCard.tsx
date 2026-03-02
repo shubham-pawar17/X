@@ -36,11 +36,11 @@ export function PostCard({ post, onLike }: Props) {
 
           <button 
           onClick={() => onLike(post.id)}
-          className={`flex items-center gap-1 transition duration-200 ${post.isliked}
+          className={`flex items-center gap-1 transition duration-200 ${post.isliked
           ? "text-red-500"
           : "text-gray-500 hover:text-red-500"}`}
           >
-            <LikesIcon />
+            <LikesIcon filled={post.isliked} />
             <span className="text-sm">{post.likes}</span>
           </button>
 
