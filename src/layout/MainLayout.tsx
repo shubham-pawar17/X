@@ -8,10 +8,10 @@ interface Props {
 function MainLayout({ children }: Props) {
   return (
     <div className="bg-black text-white min-h-screen">
-      <div className="max-w-6xl mx-auto flex">
+      <div className="max-w-7xl mx-auto flex">
         
         {/* Left Sidebar */}
-        <div className="w-1/4 border-r border-gray-800">
+        <div className="w-1/5 border-r border-gray-800">
           <Sidebar />
         </div>
 
