@@ -17,6 +17,10 @@ function MainLayout({ children }: Props) {
 
         {/* Middle Feed */}
         <div className="w-2/4 border-r border-gray-800">
+        <div className="flex justify-evenly text-center border border-gray-800">
+          <div className="flex-1 w-fit hover:bg-gray-900 "><div className="p-4">For you</div></div>
+          <div className="flex-1 hover:bg-gray-900 "><div className="p-4">Following</div></div>
+        </div>
           {children}
         </div>
 

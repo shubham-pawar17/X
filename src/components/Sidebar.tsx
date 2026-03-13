@@ -41,7 +41,7 @@ function Sidebar() {
         <div className="flex w-fit  gap-5 p-3 px-4 items-center  rounded-4xl hover:bg-gray-900 cursor-pointer ">
           <div><MoreIcon /></div><div>More</div>
         </div>
-        <div className="bg-white text-black mt-2 p-4 mx-4 rounded-full text-center font-bold hover:bg-gray-200">
+        <div className="bg-white text-black mt-2 p-2 mx-4 rounded-full text-center font-semibold text-lg hover:bg-gray-200">
           Post
         </div>
       </nav>
