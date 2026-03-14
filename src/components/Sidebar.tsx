@@ -11,7 +11,7 @@ import XIcon from "../icons/X"
 
 function Sidebar() {
   return (
-    <div>
+    <div className="fixed">
       <nav className="font-semibold text-xl">
         <div className="pt-3 px-3 pb-3"><XIcon /></div>
         <div className="flex w-fit  gap-5 p-3 px-4 items-center  rounded-4xl hover:bg-gray-900 cursor-pointer">

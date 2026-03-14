@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 
 interface Props {
@@ -15,15 +16,17 @@ function CreatePost({ onAddPost }: Props) {
     }
 
     return (
-        <div>
-            <div className="flex border-b border-gray-800 p-4">
+        <div className=" border-b border-gray-800 p-2">
+            <div className="flex p-4 gap-2">
                 <img src="../../hero.png" className="w-10 h-10 rounded-full object-cover" />
-                <textarea
-                    className="w-full bg-black text-white resize-none outline-none text-lg"
-                    placeholder="What is happening?"
-                    value={content}
-                    onChange={(e) => setContent(e.target.value)}
-                />
+                <div className="flex-1">
+                    <textarea
+                        placeholder="What's happening?"
+                        value={content}
+                        onChange={(e) => setContent(e.target.value)}
+                        className="w-full bg-transparent text-lg placeholder-gray-500 focus:outline-none pt-1"
+                    />
+                </div>
             </div>
             <div className="flex justify-end mt-3">
                 <button onClick={handleSubmit}
