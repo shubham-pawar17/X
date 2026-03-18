@@ -1,6 +1,6 @@
 function TrendingCard() {
   return (
-    <div className="bg-gray-900 p-4 rounded-xl">
+    <div className="border-[0.5px] border-gray-700 p-4 rounded-xl">
       <h2 className="text-xl font-bold mb-4">Trends for you</h2>
 
       <div className="space-y-4">

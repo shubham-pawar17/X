@@ -16,11 +16,11 @@ function CreatePost({ onAddPost }: Props) {
     }
 
     return (
-        <div className=" border-b border-gray-800 p-2">
+        <div className=" border-t border-b-2 border-gray-800 p-2">
             <div className="flex p-4 gap-2">
                 <img src="../../hero.png" className="w-10 h-10 rounded-full object-cover" />
                 <div className="flex-1">
-                    <textarea
+                    <input
                         placeholder="What's happening?"
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
