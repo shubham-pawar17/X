@@ -1,10 +1,9 @@
-import Layout from "../components/Layout"
+import MainLayout from "../layout/MainLayout"
 
 function Home() {
-  return (
-    <Layout>
-      <h1>Home Feed</h1>
-    </Layout>
+  return (<div>
+    <MainLayout/>
+  </div>
   )
 }
 

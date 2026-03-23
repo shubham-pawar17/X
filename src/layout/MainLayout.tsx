@@ -1,3 +1,4 @@
+import CreatePost from "../components/CreatePost"
 import Sidebar from "../components/Sidebar"
 import TrendingCard from "../components/TrendingCard"
 
@@ -21,6 +22,7 @@ function MainLayout({ children }: Props) {
           <div className="flex-1 hover:bg-gray-900 "><div className="p-4 ">For you</div></div>
           <div className="flex-1 hover:bg-gray-900 "><div className="p-4 text-gray-500">Following</div></div>
         </div>
+        <div><CreatePost/></div>
         <div>{children}</div>
         </div>
 
