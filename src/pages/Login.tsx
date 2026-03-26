@@ -8,13 +8,15 @@ function Login() {
   const [password, setPassword] = useState("")
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+  e.preventDefault()
 
-    console.log("Email:", email)
-    console.log("Password:", password)
+  console.log("Email:", email)
+  console.log("Password:", password)
 
-    navigate("/home")
-  }
+  localStorage.setItem("isLoggedIn", "true")
+
+  navigate("/home")
+}
 
   const handleGoogleLogin = () => {
     console.log("Google Login Clicked")

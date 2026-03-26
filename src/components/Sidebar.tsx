@@ -3,13 +3,20 @@ import ChatIcon from "../icons/Chat"
 import ExploreIcon from "../icons/Explore"
 import GrokIcon from "../icons/Grok"
 import HomeIcon from "../icons/Home"
-import MoreIcon from "../icons/More"
 import NotificationsIcon from "../icons/Notifications"
 import PremiumIcon from "../icons/Premium"
 import ProfileIcon from "../icons/profileIcon"
 import XIcon from "../icons/X"
+import { useNavigate } from "react-router-dom"
 
 function Sidebar() {
+
+  const navigate = useNavigate()
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn")
+    navigate("/")
+  }
+
   return (
     <div className="fixed">
       <nav className="font-semibold text-xl">
@@ -39,22 +46,26 @@ function Sidebar() {
           <div><ProfileIcon /></div><div>Profile</div>
         </div>
         <div className="flex w-fit  gap-5 p-3 px-4 items-center  rounded-4xl hover:bg-gray-900 cursor-pointer ">
-          <div><MoreIcon /></div><div>More</div>
+          <button onClick={handleLogout}>
+            Logout
+          </button><div>
+
+          </div>
         </div>
         <div className="bg-white text-black mt-2 p-2 mx-4 rounded-full text-center font-semibold text-lg hover:bg-gray-200">
           Post
         </div>
       </nav>
       <div className="fixed bottom-0 flex justify-between p-2 gap-4 m-4 rounded-4xl hover:bg-gray-900 ">
-          <div className="flex items-center gap-3">
-            <img src="../../hero.png" className="w-10 h-10 rounded-full object-cover" />
-            <div className="flex flex-col">
-              <span className="font-semibold">Shubham Pawar</span>
-              <span className="text-sm text-gray-600">@Shubham_pawar18</span>
-            </div>
+        <div className="flex items-center gap-3">
+          <img src="../../hero.png" className="w-10 h-10 rounded-full object-cover" />
+          <div className="flex flex-col">
+            <span className="font-semibold">Shubham Pawar</span>
+            <span className="text-sm text-gray-600">@Shubham_pawar18</span>
           </div>
-          <span className="text-2xl text-white">...</span>
-       </div>
+        </div>
+        <span className="text-2xl text-white">...</span>
+      </div>
     </div>
   )
 }
