@@ -4,10 +4,10 @@ import ReplyIcon from "../icons/Reply"
 import RepostIcon from "../icons/Repost"
 import ShareIcon from "../icons/Share"
 import ViewIcon from "../icons/View"
-import type { post } from "../types/post"
+import type { Post } from "../types/post"
 
 interface Props {
-  post: post
+  post: Post
   onLike: (id: string) => void
 }
 
@@ -36,11 +36,11 @@ export function PostCard({ post, onLike }: Props) {
 
           <button 
           onClick={() => onLike(post.id)}
-          className={`flex items-center gap-1 transition duration-200 ${post.isliked
+          className={`flex items-center gap-1 transition duration-200 ${post.isLiked
           ? "text-red-500"
           : "text-gray-500 hover:text-red-500"}`}
           >
-            <LikesIcon filled={post.isliked} />
+            <LikesIcon filled={post.isLiked} />
             <span className="text-sm">{post.likes}</span>
           </button>
 

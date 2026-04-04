@@ -1,8 +1,8 @@
-export type post ={
-    id :string
+export type Post ={
+    id :string  
     author :string
     content :string
     likes :number
     createdAt :string
-    isliked: boolean
+    isLiked: boolean
 }

@@ -2,20 +2,43 @@ import { useState } from "react";
 import CreatePost from "../components/CreatePost";
 import Sidebar from "../components/Sidebar";
 import TrendingCard from "../components/TrendingCard";
+import PostCard from "../components/PostCard";
+import type { Post } from "../types/post";
 
 
 
 function MainLayout() {
-  const [posts, setPosts] = useState<string[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]);
 
   const addPost = (content: string) => {
-    setPosts((prev) => [content, ...prev]);
-  };
+    const newPost: Post = {
+      id: crypto.randomUUID(),
+      author: "Shubham", // later you can make dynamic
+      content,
+      likes: 0,
+      createdAt: new Date().toLocaleString(),
+      isLiked: false,
+    };
 
+    setPosts((prev) => [newPost, ...prev]);
+  };
+  const handleLike = (id: string) => {
+    setPosts((prev) =>
+      prev.map((post) =>
+        post.id === id
+          ? {
+            ...post,
+            isLiked: !post.isLiked,
+            likes: post.isLiked ? post.likes - 1 : post.likes + 1,
+          }
+          : post
+      )
+    );
+  };
   return (
     <div className="bg-black text-white min-h-screen">
       <div className="max-w-full px-32 min-h-screen mx-auto flex border-gray-800">
-        
+
         {/* Left */}
         <div className="w-1/5 border-r border-gray-800">
           <Sidebar />
@@ -36,15 +59,13 @@ function MainLayout() {
 
           {/* ✅ Posts visible here */}
           <div>
-            {posts.map((post, index) => (
-              <div
-                key={index}
-                className="border-b border-gray-800 p-4 hover:bg-gray-900"
-              >
-                {post}
-              </div>
-            ))}
-          </div>
+            {posts.map((post) => (
+              <PostCard
+                key={post.id}
+                post={post}
+                onLike={handleLike}
+              />
+            ))}          </div>
         </div>
 
         {/* Right */}
